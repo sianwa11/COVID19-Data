@@ -1,0 +1,79 @@
+img {
+  width: 5%;
+}
+/* 
+.nav-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 66% auto;
+  grid-template-columns: 66% auto;
+  background: unset;
+} */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #1a202c;
+  padding: 2em;
+}
+
+header .logo {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+header a {
+  display: block;
+  padding: 0 1em;
+  text-decoration: none !important;
+}
+
+/* * {
+  box-sizing: border-box;
+} */
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.search_results {
+  padding-top: 10px;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #1a202c;
+  border-bottom: 10px solid #1a202c;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=index.4c347d44.css.map */

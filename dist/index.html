@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/index.4c347d44.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/5608dd6fe0.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script defer="" type="module" src="/index.fd60d6b7.js"></script>
+    <title>Covid 19</title>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="/"> <img src="/virus.63022321.svg"> Covid-19 Data</a>
+    </header>
+
+    <div class="main-content">
+      <div class="row">
+        <div class="column">
+          <div class="search-container">
+            <form class="search_form">
+              <input class="form-control search_field" type="text" placeholder="Search cases by country..." name="search">
+              <button type="submit" style="display: none
+"></button>
+            </form>
+          </div>
+
+          <div class="container">
+            <div class="search_results">
+              <!--             <p class="card-title">
+              Argentina <img src="https://disease.sh/assets/img/flags/ar.png" />
+            </p>
+            <div class="row">
+              <div class="col-3 text-warning">
+                <b>10</b> <small>Confirmed</small> ✔
+              </div>
+              <div class="col-3 text-primary">
+                <b>10</b> <small>Recovered</small> ❤
+              </div>
+              <div class="col-3 text-danger">
+                <b>10</b> <small>Deaths</small> 🕊
+              </div>
+            </div> -->
+            </div>
+
+            <!-- Chart will be here -->
+
+            <hr class="rounded">
+            <div class="chart" style="height: 200px; width: 200px
+">
+              <p>Total cases in 2020/21</p>
+              <canvas id="casesChart"></canvas>
+              <hr class="rounded">
+
+              <p>Total deaths in 2020/21</p>
+              <canvas id="deathChart"></canvas>
+              <hr class="rounded">
+
+              <p>Total recoveries in 2020/21</p>
+              <canvas id="recoveredChart"></canvas>
+            </div>
+          </div>
+
+          <!-- <div class="loader"></div> -->
+        </div>
+
+        <div class="column">
+          <div class="card w-75">
+            <div class="card-body global_data">
+              <!--               <h5 class="card-title">Global Data</h5>
+
+              <h4 class="card-text text-warning">
+                <b>10</b> <small>Confirmed</small> ✔
+              </h4>
+
+              <h4 class="card-text text-primary">
+                <b>10</b> <small>Recovered</small> ❤
+              </h4>
+
+              <h4 class="card-text text-danger">
+                <b>10</b> <small>Deaths</small> 🕊
+              </h4> -->
+            </div>
+          </div>
+
+          <div class="card w-75">
+            <div class="card-body kenyan_data">
+              <!--               <h5 class="card-title">
+                Kenya <img src="https://disease.sh/assets/img/flags/ke.png" />
+              </h5>
+              <h4 class="card-text text-warning">
+                <b>10</b> <small>Confirmed</small> ✔
+              </h4>
+
+              <h4 class="card-text text-primary">
+                <b>10</b> <small>Recovered</small> ❤
+              </h4>
+
+              <h4 class="card-text text-danger">
+                <b>10</b> <small>Deaths</small> 🕊
+              </h4> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
