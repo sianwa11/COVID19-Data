@@ -4,6 +4,7 @@ import GlobalDataView from "./views/GlobalDataView.js";
 import KenyanDataView from "./views/KenyanDataView.js";
 import SearchView from "./views/SearchView.js";
 import SearchResultsView from "./views/SearchResultsView.js";
+import ChartView from "./views/ChartView.js";
 
 const controlGlobalCases = async function () {
   try {
@@ -55,13 +56,58 @@ const controlSearches = async function () {
   }
 };
 
+const controlCOVIDHistory = async function () {
+  try {
+    // 1. Get the data
+    const data = await model.getCOVIDHistory();
+    // console.log(data);
+
+    // 2. Calculate totals
+    const confirmedCases = calculateTotals(data.cases);
+    const confirmedDeaths = calculateTotals(data.deaths);
+    const confirmedRecoveries = calculateTotals(data.recovered);
+
+    // 3, Render the Chart
+    ChartView.render(confirmedCases, confirmedDeaths, confirmedRecoveries);
+  } catch (err) {
+    console.log(`${err}`);
+  }
+};
+
+const calculateTotals = function (data) {
+  let secondYearTotals = 0;
+  let firstYearTotals = 0;
+  const chartData = {
+    twentytwenty: null,
+    twentyone: null,
+  };
+
+  for (const [key, value] of Object.entries(data)) {
+    if (key.endsWith("21")) {
+      secondYearTotals += value;
+    }
+
+    if (key.endsWith("20")) {
+      firstYearTotals += value;
+    }
+  }
+
+  chartData.twentytwenty = secondYearTotals;
+  chartData.twentyone = firstYearTotals;
+
+  // console.log(chartData);
+  return chartData;
+};
+
 // Starting point of the application
 const init = function () {
   controlGlobalCases();
   controlKenyanCases();
   SearchView.addHandlerSearch(controlSearches);
+  controlCOVIDHistory();
 };
 
 init();
 
 //todo: Add Inheritance to views and add chart js with worldwide data also fix the search issue
+//todo: Find a better way to display chart and include death and revcovered

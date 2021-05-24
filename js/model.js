@@ -12,6 +12,11 @@ export const state = {
     query: "",
     result: [],
   },
+  history: {
+    cases: null,
+    deaths: null,
+    recovered: null,
+  },
 };
 
 /**
@@ -69,8 +74,26 @@ export const searchCountryCase = async function (query) {
 
     state.search.result.push(data);
 
-    console.log(res, data);
+    // console.log(res, data);
     return state.search.result;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+export const getCOVIDHistory = async function () {
+  try {
+    const res = await fetch(`${API_HISTORY}`);
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(`${res.status}`);
+
+    state.history.cases = data.cases;
+    state.history.deaths = data.deaths;
+    state.history.recovered = data.recovered;
+
+    return state.history;
   } catch (err) {
     console.log(err);
     throw err;

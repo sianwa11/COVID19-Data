@@ -18,12 +18,14 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script defer type="module" src="js/controller.js"></script>
     <title>Covid 19</title>
   </head>
   <body>
     <header>
-      <a class="logo" href="/">Covid-19 Data</a>
+      <a class="logo" href="/"> <img src="img/virus.svg" /> Covid-19 Data</a>
     </header>
 
     <div class="main-content">
@@ -34,7 +36,7 @@
               <input
                 class="form-control search_field"
                 type="text"
-                placeholder="Search country..."
+                placeholder="Search cases by country..."
                 name="search"
               />
               <button type="submit" style="display: none"></button>
@@ -57,6 +59,22 @@
                 <b>10</b> <small>Deaths</small> 🕊
               </div>
             </div> -->
+            </div>
+
+            <!-- Chart will be here -->
+
+            <hr class="rounded" />
+            <div class="chart" style="height: 200px; width: 200px">
+              <p>Total cases in 2020/21</p>
+              <canvas id="casesChart"></canvas>
+              <hr class="rounded" />
+
+              <p>Total deaths in 2020/21</p>
+              <canvas id="deathChart"></canvas>
+              <hr class="rounded" />
+
+              <p>Total recoveries in 2020/21</p>
+              <canvas id="recoveredChart"></canvas>
             </div>
           </div>
 
