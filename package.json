@@ -1,0 +1,24 @@
+{
+  "name": "covid-19",
+  "version": "1.0.0",
+  "description": "\"Displaying covid-19 data\"",
+  "main": "index.html",
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sianwa11/COVID19-Data.git"
+  },
+  "author": "Sianwa Atemi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sianwa11/COVID19-Data/issues"
+  },
+  "homepage": "https://github.com/sianwa11/COVID19-Data#readme"
+}
